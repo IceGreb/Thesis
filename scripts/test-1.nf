@@ -36,6 +36,8 @@ process INTERPROSCAN {
 }
 
 process FISHERMAN {
+
+    cpus 2
     input :
     path input_seq
 
@@ -50,11 +52,9 @@ process FISHERMAN {
 
 workflow {
     Seq_Sep_ch = Seq_Sep(params.seqs)
-    sep_seqs = Seq_Sep_ch.flatMap().view()
+    sep_seqs = Seq_Sep_ch.flatMap()
     interproscan_ch = INTERPROSCAN(sep_seqs)
     FISHERMAN(interproscan_ch)
 
 
 
-
-}
