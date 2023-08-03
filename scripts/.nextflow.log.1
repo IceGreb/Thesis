@@ -1,94 +1,82 @@
-Αυγ-02 11:46:21.463 [main] DEBUG nextflow.cli.Launcher - $> nextflow run test-1.nf -resume
-Αυγ-02 11:46:21.647 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.2
-Αυγ-02 11:46:21.673 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/nikoverg/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.3
-Αυγ-02 11:46:21.682 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
-Αυγ-02 11:46:21.683 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
-Αυγ-02 11:46:21.686 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
-Αυγ-02 11:46:21.696 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
-Αυγ-02 11:46:21.768 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
-Αυγ-02 11:46:21.789 [main] INFO  nextflow.cli.CmdRun - Launching `test-1.nf` [fabulous_brahmagupta] DSL2 - revision: beddf46854
-Αυγ-02 11:46:21.790 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
-Αυγ-02 11:46:21.790 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
-Αυγ-02 11:46:21.799 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/nikoverg/.nextflow/secrets/store.json
-Αυγ-02 11:46:21.808 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@77128dab] - activable => nextflow.secret.LocalSecretsProvider@77128dab
-Αυγ-02 11:46:21.873 [main] DEBUG nextflow.Session - Session UUID: b22f3705-eb73-430a-b048-dace5d3e94a3
-Αυγ-02 11:46:21.873 [main] DEBUG nextflow.Session - Run name: fabulous_brahmagupta
-Αυγ-02 11:46:21.875 [main] DEBUG nextflow.Session - Executor pool size: 4
-Αυγ-02 11:46:21.886 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Αυγ-02 11:46:21.915 [main] DEBUG nextflow.cli.CmdRun - 
+Αυγ-02 19:11:49.105 [main] DEBUG nextflow.cli.Launcher - $> nextflow run test-1.nf
+Αυγ-02 19:11:49.245 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.04.2
+Αυγ-02 19:11:49.263 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/nikoverg/.nextflow/plugins; core-plugins: nf-amazon@1.16.2,nf-azure@1.0.1,nf-codecommit@0.1.4,nf-console@1.0.5,nf-ga4gh@1.0.5,nf-google@1.7.3,nf-tower@1.5.12,nf-wave@0.8.3
+Αυγ-02 19:11:49.272 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Αυγ-02 19:11:49.273 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Αυγ-02 19:11:49.276 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Αυγ-02 19:11:49.285 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Αυγ-02 19:11:49.356 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Αυγ-02 19:11:49.377 [main] INFO  nextflow.cli.CmdRun - Launching `test-1.nf` [spontaneous_stallman] DSL2 - revision: 4feaf61e96
+Αυγ-02 19:11:49.377 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Αυγ-02 19:11:49.378 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Αυγ-02 19:11:49.387 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/nikoverg/.nextflow/secrets/store.json
+Αυγ-02 19:11:49.394 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@522b2631] - activable => nextflow.secret.LocalSecretsProvider@522b2631
+Αυγ-02 19:11:49.464 [main] DEBUG nextflow.Session - Session UUID: f9992e0e-5e27-4f3a-b674-a8bab3a03826
+Αυγ-02 19:11:49.464 [main] DEBUG nextflow.Session - Run name: spontaneous_stallman
+Αυγ-02 19:11:49.466 [main] DEBUG nextflow.Session - Executor pool size: 4
+Αυγ-02 19:11:49.477 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Αυγ-02 19:11:49.506 [main] DEBUG nextflow.cli.CmdRun - 
   Version: 23.04.2 build 5870
   Created: 08-06-2023 08:29 UTC (11:29 EEST)
   System: Linux 5.15.122-1-MANJARO
   Runtime: Groovy 3.0.16 on OpenJDK 64-Bit Server VM 17.0.3-internal+0-adhoc..src
   Encoding: UTF-8 (UTF-8)
-  Process: 27163@nv-main [127.0.1.1]
-  CPUs: 4 - Mem: 15.6 GB (10.9 GB) - Swap: 0 (0)
-Αυγ-02 11:46:21.958 [main] DEBUG nextflow.Session - Work-dir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work [ext2/ext3]
-Αυγ-02 11:46:22.013 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
-Αυγ-02 11:46:22.024 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
-Αυγ-02 11:46:22.054 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
-Αυγ-02 11:46:22.067 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
-Αυγ-02 11:46:22.185 [main] DEBUG nextflow.Session - Session start
-Αυγ-02 11:46:22.920 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
-Αυγ-02 11:46:23.015 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Αυγ-02 11:46:23.015 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Αυγ-02 11:46:23.021 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
-Αυγ-02 11:46:23.026 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=15.6 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
-Αυγ-02 11:46:23.167 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Αυγ-02 11:46:23.167 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Αυγ-02 11:46:23.171 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
-Αυγ-02 11:46:23.171 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
-Αυγ-02 11:46:23.174 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FISHERMAN, Seq_Sep, INTERPROSCAN
-Αυγ-02 11:46:23.175 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
-Αυγ-02 11:46:23.175 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Seq_Sep
-Αυγ-02 11:46:23.176 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > INTERPROSCAN
-Αυγ-02 11:46:23.177 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FISHERMAN
-Αυγ-02 11:46:23.177 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
-Αυγ-02 11:46:23.177 [main] DEBUG nextflow.Session - Session await
-Αυγ-02 11:46:23.382 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:46:23.384 [Task submitter] INFO  nextflow.Session - [64/e0e280] Submitted process > Seq_Sep
-Αυγ-02 11:46:23.751 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: Seq_Sep; status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/64/e0e2801463477c0eee871568aa8a7a]
-Αυγ-02 11:46:23.785 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
-Αυγ-02 11:46:23.820 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:46:23.824 [Task submitter] INFO  nextflow.Session - [d8/f00cfd] Submitted process > INTERPROSCAN (3)
-Αυγ-02 11:46:23.835 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:46:23.836 [Task submitter] INFO  nextflow.Session - [e0/f2b16f] Submitted process > INTERPROSCAN (2)
-Αυγ-02 11:46:23.848 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:46:23.849 [Task submitter] INFO  nextflow.Session - [61/6e45ff] Submitted process > INTERPROSCAN (4)
-Αυγ-02 11:46:23.877 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:46:23.887 [Task submitter] INFO  nextflow.Session - [27/50ed7d] Submitted process > INTERPROSCAN (5)
-Αυγ-02 11:47:37.865 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: INTERPROSCAN (4); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/61/6e45ffdc6736e43c0f87c862e9cee4]
-Αυγ-02 11:47:37.883 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:47:37.884 [Task submitter] INFO  nextflow.Session - [15/b991e5] Submitted process > INTERPROSCAN (1)
-Αυγ-02 11:47:42.245 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: INTERPROSCAN (5); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/27/50ed7dd35866f7ed4165007c1deeb2]
-Αυγ-02 11:47:42.276 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:47:42.279 [Task submitter] INFO  nextflow.Session - [82/7a80c9] Submitted process > INTERPROSCAN (6)
-Αυγ-02 11:47:42.934 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: INTERPROSCAN (3); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/d8/f00cfd110a7a9be6a3519643fe7314]
-Αυγ-02 11:47:42.937 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:47:42.937 [Task submitter] INFO  nextflow.Session - [1b/d8a83d] Submitted process > FISHERMAN (1)
-Αυγ-02 11:47:44.421 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: FISHERMAN (1); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/1b/d8a83d0b1c33e9548d828be6274ba6]
-Αυγ-02 11:47:44.427 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:47:44.428 [Task submitter] INFO  nextflow.Session - [5a/c7ca4f] Submitted process > FISHERMAN (2)
-Αυγ-02 11:47:46.005 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: FISHERMAN (2); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/5a/c7ca4f8d75ecfb793c93b20d999d89]
-Αυγ-02 11:47:46.019 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:47:46.019 [Task submitter] INFO  nextflow.Session - [b0/cb96a0] Submitted process > FISHERMAN (3)
-Αυγ-02 11:47:46.123 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: INTERPROSCAN (2); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/e0/f2b16fcd1ba928d0ba12b273a8a71c]
-Αυγ-02 11:47:46.131 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:47:46.131 [Task submitter] INFO  nextflow.Session - [47/0f4641] Submitted process > FISHERMAN (4)
-Αυγ-02 11:47:47.359 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: FISHERMAN (3); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/b0/cb96a03f6c43464c56fe81c8c5b3e2]
-Αυγ-02 11:47:47.386 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: FISHERMAN (4); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/47/0f4641e568d22eece6a489534c6958]
-Αυγ-02 11:48:38.509 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: INTERPROSCAN (1); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/15/b991e58dcad3aa9849095905084728]
-Αυγ-02 11:48:38.514 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:48:38.514 [Task submitter] INFO  nextflow.Session - [70/7150d0] Submitted process > FISHERMAN (5)
-Αυγ-02 11:48:38.924 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: FISHERMAN (5); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/70/7150d0c9f3018d2d84bf95bac7b8f5]
-Αυγ-02 11:48:41.662 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: INTERPROSCAN (6); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/82/7a80c966976002375be5f1621fc235]
-Αυγ-02 11:48:41.668 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
-Αυγ-02 11:48:41.668 [Task submitter] INFO  nextflow.Session - [2f/586033] Submitted process > FISHERMAN (6)
-Αυγ-02 11:48:42.088 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: FISHERMAN (6); status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/2f/586033ac64b7a9f29529e82f850e91]
-Αυγ-02 11:48:42.090 [main] DEBUG nextflow.Session - Session await > all processes finished
-Αυγ-02 11:48:42.092 [main] DEBUG nextflow.Session - Session await > all barriers passed
-Αυγ-02 11:48:42.097 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
-Αυγ-02 11:48:42.103 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=13; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=7m 20s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=4; peakCpus=4; peakMemory=0; ]
-Αυγ-02 11:48:42.285 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
-Αυγ-02 11:48:42.308 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
-Αυγ-02 11:48:42.308 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
+  Process: 51622@nv-main [127.0.1.1]
+  CPUs: 4 - Mem: 15.6 GB (11.5 GB) - Swap: 0 (0)
+Αυγ-02 19:11:49.530 [main] DEBUG nextflow.Session - Work-dir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work [ext2/ext3]
+Αυγ-02 19:11:49.584 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Αυγ-02 19:11:49.595 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Αυγ-02 19:11:49.634 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Αυγ-02 19:11:49.645 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+Αυγ-02 19:11:49.714 [main] DEBUG nextflow.Session - Session start
+Αυγ-02 19:11:50.468 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Αυγ-02 19:11:50.571 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Αυγ-02 19:11:50.571 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Αυγ-02 19:11:50.577 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Αυγ-02 19:11:50.581 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=4; memory=15.6 GB; capacity=4; pollInterval=100ms; dumpInterval=5m
+Αυγ-02 19:11:50.692 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Αυγ-02 19:11:50.692 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Αυγ-02 19:11:50.699 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Αυγ-02 19:11:50.699 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Αυγ-02 19:11:50.702 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FISHERMAN, Seq_Sep, INTERPROSCAN
+Αυγ-02 19:11:50.703 [main] DEBUG nextflow.Session - Igniting dataflow network (3)
+Αυγ-02 19:11:50.703 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Seq_Sep
+Αυγ-02 19:11:50.704 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > INTERPROSCAN
+Αυγ-02 19:11:50.708 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FISHERMAN
+Αυγ-02 19:11:50.711 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Αυγ-02 19:11:50.711 [main] DEBUG nextflow.Session - Session await
+Αυγ-02 19:11:50.856 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Αυγ-02 19:11:50.859 [Task submitter] INFO  nextflow.Session - [09/054585] Submitted process > Seq_Sep
+Αυγ-02 19:11:51.217 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: Seq_Sep; status: COMPLETED; exit: 0; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/09/054585805c12b632e867b2a81dc3d1]
+Αυγ-02 19:11:51.266 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Αυγ-02 19:11:51.299 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Αυγ-02 19:11:51.302 [Task submitter] INFO  nextflow.Session - [b8/949d48] Submitted process > INTERPROSCAN (2)
+Αυγ-02 19:11:51.308 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Αυγ-02 19:11:51.315 [Task submitter] INFO  nextflow.Session - [ec/d22b0e] Submitted process > INTERPROSCAN (4)
+Αυγ-02 19:11:51.321 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Αυγ-02 19:11:51.335 [Task submitter] INFO  nextflow.Session - [a7/7baf69] Submitted process > INTERPROSCAN (6)
+Αυγ-02 19:11:51.342 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Αυγ-02 19:11:51.342 [Task submitter] INFO  nextflow.Session - [a4/05d901] Submitted process > INTERPROSCAN (3)
+Αυγ-02 19:12:25.790 [SIGTERM handler] DEBUG nextflow.Session - Session aborted -- Cause: SIGTERM
+Αυγ-02 19:12:25.814 [SIGTERM handler] DEBUG nextflow.Session - The following nodes are still active:
+[process] FISHERMAN
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: input_seq
+  port 1: (cntrl) -     ; channel: $
+
+Αυγ-02 19:12:25.815 [main] DEBUG nextflow.Session - Session await > all processes finished
+Αυγ-02 19:12:25.815 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Αυγ-02 19:12:25.825 [main] WARN  n.processor.TaskPollingMonitor - Killing running tasks (4)
+Αυγ-02 19:12:25.848 [main] DEBUG n.processor.TaskPollingMonitor - Failed to kill pending tasks: TaskHandler[id: 3; name: INTERPROSCAN (2); status: RUNNING; exit: -; error: -; workDir: /home/nikoverg/Documents/bioinformatics/projects/Thesis/scripts/work/b8/949d4885980122706b9dd11d3ae699] -- cause: Cannot run program "bash": error=0, Failed to exec spawn helper: pid: 52175, signal: 1
+Αυγ-02 19:12:25.909 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill INTERPROSCAN (4) -- command: kill -TERM 51742; exit: 1 
+ bash: γραμμή 1: kill: (51742) - Δεν υπάρχει τέτοια διεργασία
+
+Αυγ-02 19:12:25.955 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill INTERPROSCAN (6) -- command: kill -TERM 51754; exit: 1 
+ bash: γραμμή 1: kill: (51754) - Δεν υπάρχει τέτοια διεργασία
+
+Αυγ-02 19:12:25.962 [main] DEBUG n.executor.local.LocalTaskHandler - Unable to kill INTERPROSCAN (3) -- command: kill -TERM 51753; exit: 1 
+ bash: γραμμή 1: kill: (51753) - Δεν υπάρχει τέτοια διεργασία
+
+Αυγ-02 19:12:25.968 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=2; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=4; succeedDuration=324ms; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=4; peakCpus=4; peakMemory=0; ]
+Αυγ-02 19:12:26.009 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Αυγ-02 19:12:26.090 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
