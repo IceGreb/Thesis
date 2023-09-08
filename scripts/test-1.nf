@@ -42,8 +42,9 @@ process FISHERMAN {
 workflow {
     Channel
         .fromPath(params.seqs)
-        .splitFasta(by : 10 , file: params.separated_seqs)
+        .splitFasta(by : 50 , file: true)
         .set {sep_seqs_ch}
+    
     INTERPROSCAN(sep_seqs_ch)
     
 }
