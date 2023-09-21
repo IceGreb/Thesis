@@ -1,15 +1,15 @@
-params.seqs = "/home/nikoverg/Documents/bioinformatics/projects/Thesis/separated_secs/separated_secs.test1"
+params.seqs = "/home/nvergoulidis/scripts/separated_secs/separated_secs.test1"
 params.separated_seqs = "/home/nikoverg/Documents/bioinformatics/projects/Thesis/separated_secs/separated_secs.fasta"
 params.interproscan_dir = "/home/nikoverg/my_interproscan/interproscan-5.63-95.0/"
-params.outdir = "/home/nikoverg/Documents/bioinformatics/projects/Thesis/results"
-params.outdir_results = "/home/nikoverg/Documents/bioinformatics/projects/Thesis/interproscan_results/"
+params.outdir = "/home/nvergoulidis/scripts/results"
+
 
 
 
 
 
 process INTERPROSCAN {
-    publishDir "${params.outDir}annotations/interproscan", mode: "copy" label "ips"
+    publishDir "${params.outdir}annotations/interproscan", mode: "copy" label "ips"
 
     input :
     path input_seq
@@ -19,7 +19,7 @@ process INTERPROSCAN {
     
     script:
     """
-    ${params.interproscan_dir}interproscan.sh -dp -i ${input_seq}  -f tsv
+    ${params.interproscan_dir}interproscan.sh -dp -i ${input_seq}  -f tsv -etra
     """
 
 }
@@ -42,9 +42,11 @@ process FISHERMAN {
 workflow {
     Channel
         .fromPath(params.seqs)
+        .flatten()
         .splitFasta(by : 50 , file: true)
         .set {sep_seqs_ch}
     
-    INTERPROSCAN(sep_seqs_ch)
+    ips_ch = INTERPROSCAN(sep_seqs_ch)
+    fish_ch = FISHERMAN(ips_ch)
     
 }
