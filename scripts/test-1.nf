@@ -35,7 +35,7 @@ process FISHERMAN {
 
     script:
     """
-    fisherman.py -i ${fasta}.tsv -o ${params.outdir}
+    fisherman.py -i ${input_seq}.tsv -o ${params.outdir}
     """
 }
 
