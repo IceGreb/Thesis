@@ -9,7 +9,7 @@ params.outdir = "/home/nvergoulidis/scripts/results"
 
 
 process INTERPROSCAN {
-    publishDir "${params.outdir}annotations/interproscan", mode: "copy" label "ips"
+    publishDir "${params.outdir}/annotations/interproscan", mode: "copy" label "ips"
 
     input :
     path input_seq
@@ -19,7 +19,7 @@ process INTERPROSCAN {
     
     script:
     """
-    ${params.interproscan_dir}interproscan.sh -dp -i ${input_seq}  -f tsv -etra
+    ${params.interproscan_dir}/interproscan.sh -dp -i ${input_seq}  -f tsv -etra
     """
 
 }
