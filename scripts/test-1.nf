@@ -1,6 +1,6 @@
 params.seqs = "/home/nvergoulidis/scripts/separated_secs/separated_secs.test1"
 params.separated_seqs = "/home/nikoverg/Documents/bioinformatics/projects/Thesis/separated_secs/separated_secs.fasta"
-params.interproscan_dir = "/home/nikoverg/my_interproscan/interproscan-5.63-95.0/"
+params.interproscan_dir = "/home/nvergoulidis/interproscan-5.63-95.0"
 params.outdir = "/home/nvergoulidis/scripts/results"
 
 
