@@ -1,4 +1,4 @@
-#!/home/nikoverg/miniconda3/envs/myenv/bin/python
+#!/home/nvergoulidis/miniconda3/bin/python
 from Bio import SeqIO
 import os
 import glob
@@ -14,7 +14,7 @@ parser.add_argument("-i","--input", help = "Input directory containing tsv files
 parser.add_argument("-o","--output", help = "Output file to write results")
 args = parser.parse_args()
 path = args.input
-os.chdir(path)
+#os.chdir(path)
 
 def read_tsv_file(file_path, output_file):
     with open (file_path, 'r') as f, open(output_file,'a') as out_f:
@@ -36,6 +36,6 @@ def read_tsv_file(file_path, output_file):
 for file in os.listdir():
     # Check whether file is in text format or not
     if file.endswith(".tsv"):
-        file_path = f"{path}/{file}"
+        file_path = f"{file}"
 
         read_tsv_file(file_path, args.output)
