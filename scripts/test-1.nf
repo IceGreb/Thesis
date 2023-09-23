@@ -1,14 +1,27 @@
-params.seqs = "/home/nvergoulidis/scripts/uniprot_sprot.fasta"
-params.interproscan_dir = "/home/nvergoulidis/interproscan-5.63-95.0"
-params.outdir = "/home/nvergoulidis/scripts/results/"
+params.seqs = "$projectDir/scripts/data/"
+params.ips_dir = "~/interproscan-5.63-95.0"
+params.outdir = "$projectDir/scripts/results/"
+
+log.info """\
+    MG - N F   P I P E L I N E
+    ===================================
+    interproscan : ${params.ips_dir}
+    sequences        : ${params.seqs}
+    outdir       : ${params.outdir}
+    """
+    .stripIndent(true)
 
 
-
-process INTERPROSCAN {
+/*
+ * define Interposcan process that performs ips analysis against databases
+ * mentioned in the script code block given input sequences and
+ * outputs results as .tsv
+ */
+process IPS {
 
     publishDir "${params.outdir}/annotations/interproscan", mode: "copy" label "ips"
 
-    debug true
+    debug true //process stdout shows in terminal
 
     input :
     path input_seq
@@ -18,7 +31,7 @@ process INTERPROSCAN {
 
     script:
     """
-    ${params.interproscan_dir}/interproscan.sh -appl Pfam,PANTHER,TIGRFAM,SUPERFAMILY -dp -i ${input_seq}  -f tsv -etra -cpu 16
+    ${params.ips_dir}/interproscan.sh -appl Pfam,PANTHER,TIGRFAM,SUPERFAMILY -dp -i ${input_seq}  -f tsv -etra -cpu 16
     """
 }
 
@@ -45,5 +58,6 @@ workflow {
         .splitFasta(by : 80000 , file: true)
         .set {sep_seqs_ch}
 
-    ips_ch = INTERPROSCAN(sep_seqs_ch).view()
-    FISHERMAN(ips_ch).view()
+    ips_ch = IPS(sep_seqs_ch).view()
+    fish_ch= FISHERMAN(ips_ch).view()
+}
