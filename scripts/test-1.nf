@@ -1,4 +1,4 @@
-params.seqs = "$projectDir/scripts/data/"
+params.seqs = "$projectDir/scripts/testing/"
 params.ips_dir = "~/interproscan-5.63-95.0"
 params.outdir = "$projectDir/scripts/results/"
 
@@ -53,7 +53,7 @@ process FISHERMAN {
 
 workflow {
     Channel
-        .fromPath(params.seqs)
+        .fromPath(params.seqs'*.txt')
         .flatten()
         .splitFasta(by : 80000 , file: true)
         .set {sep_seqs_ch}
