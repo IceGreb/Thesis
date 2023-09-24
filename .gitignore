@@ -10,3 +10,10 @@ scripts/.nextflow.log.8
 scripts/.nextflow.log.9
 scripts/results/.nextflow.log.1
 scripts/results/.nextflow.log
+scripts/test-2.nf
+scripts/sample.1.txt.tsv.txt
+.gitignore
+scripts/sample1.txt
+scripts/bin/sample.1.txt.tsv
+.gitignore
+scripts/sample.1.txt.tsv
