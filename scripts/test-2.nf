@@ -1,4 +1,5 @@
-params.seqs = "$projectDir/testing/"
+//First implement of nextflow tsv parsing for easy access to pattern matching with python in following step
+params.seqs = "$projectDir/separated_seqs/"
 params.ips_dir = "~/interproscan-5.63-95.0"
 params.outdir = "$projectDir/results/"
 
@@ -35,30 +36,15 @@ process IPS {
     """
 }
 
-
-process FISHERMAN {
-    debug true
-
-
-    input :
-    path ips_tsv
-
-    output :
-    path "${ips_tsv}"
-
-    script:
-    """
-    fisherman.py -i ${ips_tsv} -o ${params.outdir}${ips_tsv}.txt
-    """
-}
-
 workflow {
     Channel
-        .fromPath('$params.seqs*.txt') //not working atm
+        .fromPath('/home/nvergoulidis/scripts/separated_secs/separated_secs.test2.txt') //not working atm
         .flatten()
-        .splitFasta(by : 80000 , file: true)
+        .splitFasta(by : 1 , file: true)
         .set {sep_seqs_ch}
 
     ips_ch = IPS(sep_seqs_ch).view()
-    fish_ch= FISHERMAN(ips_ch).view()
+
+        .splitCsv(sep: '\t', header: ['prot_asc','seqMD5digest','SeqLength','Analysis','SignAscen','SignDescr','Start','End','Score','Status','Date','IPRacc'])
+        .view { row-> "${row.prot_asc}, ${row.Start}"}
 }
