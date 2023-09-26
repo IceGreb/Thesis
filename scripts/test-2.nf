@@ -47,4 +47,6 @@ workflow {
 
         .splitCsv(sep: '\t', header: ['prot_asc','seqMD5digest','SeqLength','Analysis','SignAscen','SignDescr','Start','End','Score','Status','Date','IPRacc'])
         .view { row-> "${row.prot_asc}, ${row.Start}"}
+        .set {split_csv_ch}
+    
 }
