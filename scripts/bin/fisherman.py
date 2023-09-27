@@ -5,6 +5,7 @@ import glob
 import re
 import argparse
 import pandas as pd
+from IPython.display import display
 Nattokinases = ["IPR000209","IPR010259","IPR023827","IPR022398","IPR023828","IPR015500","IPR036852"]
 Feruloyl_esterases = ["IPR011118","IPR010126","IPR002921","IPR043595","IPR029058"]
 Petases_Pet_hydrolases = ["IPR041127"]
@@ -14,40 +15,48 @@ parser.add_argument("-i","--input", help = "Input directory containing tsv files
 parser.add_argument("-o","--output", help = "Output file to write results")
 args = parser.parse_args()
 path = args.input
-os.chdir(path)
+os.chdir(path) #input command must pass a directory here
 
-
-table1 = pd.read_csv(file_path, sep="\t")
-table1.head
-
-def read_tsv_file(file_path, output_file):
-    with open (file_path, 'r') as f, open(output_file,'a') as out_f:
-        for line in f:
-        #protein = f.read().strip()
-        queries = (re.findall("IPR[0-9]+",protein),file)
-        print(queries)
-        for query in queries:
-            for id in query:
-                if id in Nattokinases:
-                    prot_id = re.match("\S+",protein)
-                    match_sites = tsv_pattern.match(protein)
-                    out_f.write(f"Found matching           Nattokinases domain: ID:\t{prot_id.group(0)}\t{id}\tstart site:{match_sites.group(1)}\tin tsv file:\t{file}\n") #match.group(0) prints only query str
-                elif id in Feruloyl_esterases:
-                    prot_id = re.match("\S+", protein)
-                    out_f.write(f"Found matching     Feruloyl_esterases domain: ID:\t{prot_id.group(0)}\t{id}\tin tsv file:\t{file}\n")
-                elif id in Petases_Pet_hydrolases:
-                    prot_id = re.match("\S+", protein)
-                    out_f.write(f"Found matching Petases_Pet_hydrolases domain: ID:\t{prot_id.group(0)}\t{id}\tin tsv file:\t{file}\n")                
-                elif id in Cocaine_esterases:
-                    prot_id = re.match("\S+", protein)
-                    out_f.write(f"Found matching      Cocaine_esterases domain: ID:\t{prot_id.group(0)}\t{id}\tin tsv file:\t{file}\n")
-                else:
-                    out_f.write("No matches found!\n")
-for file in os.listdir():
+for file in os.listdir(): #loop through directory
     # Check whether file is in text format or not
-    if file.endswith(".tsv"):
-        file_path = f"{path}/{file}"
+    if file.endswith(".tsv"):   #the name of the tsv file
+        file_path = f"{path}/{file}" 
+        table1 = pd.read_csv(file_path,header=None, sep="\t")   
+        table1 = table1.rename(columns={0:"Protein", 6:"Start", 7:"Stop", 11:"IPR"})
+        data1=[]
+        data2=[]
+        data3=[]
+        data4=[]
+        for value in table1.index:
+            if table1["IPR"][value] in Nattokinases:
+                data1.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+                
+            elif table1["IPR"][value] in Feruloyl_esterases:
+                data2.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+                
+            elif table1["IPR"][value] in Petases_Pet_hydrolases:
+                data3.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+                
+            elif table1["IPR"][value] in Cocaine_esterases:
+                data4.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+                
+        
+        Nattokinases_Hits = pd.DataFrame(data1, columns=["Protein", "Domain", "Start", "Stop"])
+        Nattokinases_Hits.index += 1
+        Feruloyl_esterases_Hits = pd.DataFrame(data2, columns=["Protein", "Domain", "Start", "Stop"])
+        Feruloyl_esterases_Hits.index +=1
+        Petases_Pet_hydrolases_Hits = pd.DataFrame(data3, columns=["Protein", "Domain", "Start", "Stop"])
+        Petases_Pet_hydrolases_Hits.index += 1
+        Cocaine_esterases_Hits = pd.DataFrame(data4, columns=["Protein", "Domain", "Start", "Stop"])
+        Cocaine_esterases_Hits.index += 1
+        
+        Nattokinases_Hits.to_csv(f"Nattokinases_Hits_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
+        Feruloyl_esterases_Hits.to_csv(f"Feruloyl_esterases_Hits_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
+        Petases_Pet_hydrolases_Hits.to_csv(f"Petases_Pet_hydrolases_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
+        Cocaine_esterases_Hits.to_csv(f"Cocaine_esterases_Hits_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
+            
+    
+                
         
 
-        read_tsv_file(file_path, args.output)
-        #print (file_path)
+
