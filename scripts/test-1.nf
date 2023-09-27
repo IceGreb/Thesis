@@ -6,7 +6,7 @@ log.info """\
     MG - N F   P I P E L I N E
     ===================================
     interproscan : ${params.ips_dir}
-    sequences        : ${params.seqs}
+    fasta_file   : ${params.seqs}
     outdir       : ${params.outdir}
     """
     .stripIndent(true)
@@ -19,7 +19,7 @@ log.info """\
  */
 process IPS {
 
-    publishDir "${params.outdir}/annotations/interproscan", mode: "copy" label "ips"
+    publishDir "${params.outdir}/interproscan", mode: "copy" label "ips"
 
     debug true //process stdout shows in terminal
 
@@ -48,13 +48,13 @@ process FISHERMAN {
 
     script:
     """
-    fisherman.py -i ${ips_tsv} -o ${params.outdir}${ips_tsv}.txt
+    fisherman.py -i ${ips_tsv} -o ${params.outdir}${ips_tsv}.tsv
     """
 }
 
 workflow {
     Channel
-        .fromPath('$params.seqs*.txt') //not working atm
+        .fromPath(params.seqs) //not working atm
         .flatten()
         .splitFasta(by : 80000 , file: true)
         .set {sep_seqs_ch}
