@@ -17,3 +17,8 @@ scripts/sample1.txt
 scripts/bin/sample.1.txt.tsv
 .gitignore
 scripts/sample.1.txt.tsv
+scripts/Cocaine_esterases_Hits_sample.1.txt.tsv.tsv
+scripts/Feruloyl_esterases_Hits_sample.1.txt.tsv.tsv
+scripts/Nattokinases_Hits_sample.1.txt.tsv.tsv
+scripts/Petases_Pet_hydrolases_sample.1.txt.tsv.tsv
+scripts/bin/output1.tsv
