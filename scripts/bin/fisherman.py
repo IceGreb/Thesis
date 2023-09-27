@@ -16,15 +16,9 @@ args = parser.parse_args()
 path = args.input
 os.chdir(path)
 
-tsv_pattern = re.compile(
-    r'''
-    ^                # Start of the line
-    (?:[^\t]*\t){6}  # Match the first six columns, separated by tabs
-    ([^\t]*)\t       # Capture the 7th column and following tab
-    ([^\t]*)         # Capture the 8th column (end of line)
-    ''',
-    re.VERBOSE  # Allow comments and whitespace in the pattern
-)
+
+table1 = pd.read_csv(file_path, sep="\t")
+table1.head
 
 def read_tsv_file(file_path, output_file):
     with open (file_path, 'r') as f, open(output_file,'a') as out_f:
