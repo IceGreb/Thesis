@@ -31,7 +31,7 @@ process IPS {
 
     script:
     """
-    ${params.ips_dir}/interproscan.sh -appl Pfam,PANTHER,TIGRFAM,SUPERFAMILY -dp -i ${input_seq}  -f tsv -etra -cpu 16
+    ${params.ips_dir}/interproscan.sh -appl Pfam,PANTHER,TIGRFAM,SUPERFAMILY -dp -i ${input_seq}  -f tsv -etra -cpu 8
     """
 }
 
@@ -56,7 +56,7 @@ workflow {
     Channel
         .fromPath(params.seqs) //not working atm
         .flatten()
-        .splitFasta(by : 80000 , file: true)
+        .splitFasta(by : 150000 , file: true)
         .set {sep_seqs_ch}
 
     ips_ch = IPS(sep_seqs_ch).view()
