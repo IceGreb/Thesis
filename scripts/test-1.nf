@@ -1,5 +1,5 @@
 params.seqs = "$projectDir/testing/"
-params.ips_dir = "~/interproscan-5.63-95.0"
+params.ips_dir = "/home/nikoverg/my_interproscan/interproscan-5.63-95.0"
 params.outdir = "$projectDir/results/"
 
 log.info """\
@@ -37,6 +37,7 @@ process IPS {
 
 
 process FISHERMAN {
+    publishDir "${params.outdir}/fisherman", mode: "copy" label "ips"
     debug true
 
 
@@ -48,13 +49,13 @@ process FISHERMAN {
 
     script:
     """
-    fisherman.py -i ${ips_tsv} -o ${params.outdir}${ips_tsv}.tsv
+    fisherman.py -i ${ips_tsv} -o ${params.outdir}${ips_tsv}
     """
 }
 
 workflow {
     Channel
-        .fromPath(params.seqs) //not working atm
+        .fromPath(params.seqs, checkIfExists: true) //not working atm
         .flatten()
         .splitFasta(by : 150000 , file: true)
         .set {sep_seqs_ch}
