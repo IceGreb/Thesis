@@ -1,4 +1,4 @@
-#!/home/nikoverg/miniconda3/envs/myenv/bin/python
+#!/home/nvergoulidis/miniconda3/bin/python
 from Bio import SeqIO
 import os
 import glob

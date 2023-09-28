@@ -1,5 +1,5 @@
 params.seqs = "$projectDir/testing/"
-params.ips_dir = "/home/nikoverg/my_interproscan/interproscan-5.63-95.0"
+params.ips_dir = "~/interproscan-5.63-95.0"
 params.outdir = "$projectDir/results/"
 
 log.info """\
