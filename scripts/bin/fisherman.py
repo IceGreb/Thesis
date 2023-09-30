@@ -1,4 +1,4 @@
-#!/home/nvergoulidis/miniconda3/bin/python
+#!/home/nikoverg/miniconda3/envs/myenv/bin/python
 from Bio import SeqIO
 import os
 import glob
@@ -22,38 +22,38 @@ file = args.input
 if file.endswith(".tsv"):   #the name of the tsv file
         #file_path = f"{path}/{file}" 
     table1 = pd.read_csv(file,header=None, sep="\t")   
-    table1 = table1.rename(columns={0:"Protein", 6:"Start", 7:"Stop", 11:"IPR"})
+    table1 = table1.rename(columns={0:"Protein", 6:"Start", 7:"Stop", 8:"Score", 11:"IPR"})
     data1=[]
     data2=[]
     data3=[]
     data4=[]
     for value in table1.index:
         if table1["IPR"][value] in Nattokinases:
-            data1.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+            data1.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value], table1["Score"][value]])
             
         elif table1["IPR"][value] in Feruloyl_esterases:
-            data2.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+            data2.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value], table1["Score"][value]])
                 
         elif table1["IPR"][value] in Petases_Pet_hydrolases:
-            data3.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+            data3.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value], table1["Score"][value]])
                 
         elif table1["IPR"][value] in Cocaine_esterases:
-            data4.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value]])
+            data4.append([table1["Protein"][value], table1["IPR"][value], table1["Start"][value], table1["Stop"][value], table1["Score"][value]])
                 
         
-    Nattokinases_Hits = pd.DataFrame(data1, columns=["Protein", "Domain", "Start", "Stop"])
+    Nattokinases_Hits = pd.DataFrame(data1, columns=["Protein", "Domain", "Start", "Stop", "Score"])
     Nattokinases_Hits.index += 1
-    Feruloyl_esterases_Hits = pd.DataFrame(data2, columns=["Protein", "Domain", "Start", "Stop"])
+    Feruloyl_esterases_Hits = pd.DataFrame(data2, columns=["Protein", "Domain", "Start", "Stop", "Score"])
     Feruloyl_esterases_Hits.index +=1
-    Petases_Pet_hydrolases_Hits = pd.DataFrame(data3, columns=["Protein", "Domain", "Start", "Stop"])
+    Petases_Pet_hydrolases_Hits = pd.DataFrame(data3, columns=["Protein", "Domain", "Start", "Stop", "Score"])
     Petases_Pet_hydrolases_Hits.index += 1
-    Cocaine_esterases_Hits = pd.DataFrame(data4, columns=["Protein", "Domain", "Start", "Stop"])
+    Cocaine_esterases_Hits = pd.DataFrame(data4, columns=["Protein", "Domain", "Start", "Stop", "Score"])
     Cocaine_esterases_Hits.index += 1
         
-    Nattokinases_Hits.to_csv(f"Nattokinases_Hits_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
-    Feruloyl_esterases_Hits.to_csv(f"Feruloyl_esterases_Hits_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
-    Petases_Pet_hydrolases_Hits.to_csv(f"Petases_Pet_hydrolases_{file}.tsv", sep="\t", index=True, encoding = "utf-8")
-    Cocaine_esterases_Hits.to_csv(f"Cocaine_esterases_Hits_{file}.tsv", sep="\t", index=True, encoding = "utf-8")    
+    Nattokinases_Hits.to_csv(f"Nattokinases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")
+    Feruloyl_esterases_Hits.to_csv(f"Feruloyl_esterases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")
+    Petases_Pet_hydrolases_Hits.to_csv(f"Petases_Pet_hydrolases_{file}", sep="\t", index=True, encoding = "utf-8")
+    Cocaine_esterases_Hits.to_csv(f"Cocaine_esterases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")    
             
     
                 
