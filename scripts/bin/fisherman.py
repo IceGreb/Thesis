@@ -59,7 +59,8 @@ if file.endswith(".tsv"):   #the name of the tsv file
     Feruloyl_esterases_results = pd.read_csv("Feruloyl_esterases_Hits_{file}")
     Petases_Pet_hydrolases_results = pd.read_csv("Petases_Pet_hydrolases_Hits_{file}")
     Cocaine_esterases_results = pd.reac_csv("Cocaine_esterases_Hits_{file}")
-    print("Number of Nattokinases hits :" , len(Nattokinases_results) 
+    print("Number of Nattokinases hits: " , len(Nattokinases_results),"\n Number of Feruloyl hits: ", len(Feruloyl_esterases_results), "\n Number of Petases hits: ", 
+          len(Petases_Pet_hydrolases_results), "\n Number of Cocaine hits: ", len(Cocaine_esterases_results))
                 
         
 
