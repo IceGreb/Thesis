@@ -55,7 +55,11 @@ if file.endswith(".tsv"):   #the name of the tsv file
     Petases_Pet_hydrolases_Hits.to_csv(f"Petases_Pet_hydrolases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")
     Cocaine_esterases_Hits.to_csv(f"Cocaine_esterases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")    
             
-    
+    Nattokinases_results = pd.read_csv("Nattokinases_Hits_{file}")
+    Feruloyl_esterases_results = pd.read_csv("Feruloyl_esterases_Hits_{file}")
+    Petases_Pet_hydrolases_results = pd.read_csv("Petases_Pet_hydrolases_Hits_{file}")
+    Cocaine_esterases_results = pd.reac_csv("Cocaine_esterases_Hits_{file}")
+    print("Number of Nattokinases hits :" , len(Nattokinases_results) 
                 
         
 
