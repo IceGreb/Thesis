@@ -52,7 +52,7 @@ if file.endswith(".tsv"):   #the name of the tsv file
         
     Nattokinases_Hits.to_csv(f"Nattokinases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")
     Feruloyl_esterases_Hits.to_csv(f"Feruloyl_esterases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")
-    Petases_Pet_hydrolases_Hits.to_csv(f"Petases_Pet_hydrolases_{file}", sep="\t", index=True, encoding = "utf-8")
+    Petases_Pet_hydrolases_Hits.to_csv(f"Petases_Pet_hydrolases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")
     Cocaine_esterases_Hits.to_csv(f"Cocaine_esterases_Hits_{file}", sep="\t", index=True, encoding = "utf-8")    
             
     
