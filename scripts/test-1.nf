@@ -53,6 +53,24 @@ process FISHERMAN {
     """
 }
 
+
+process FETCHER {
+    publishDir "${params.outdir}"
+    debug true
+
+
+    input :
+    path input_seq
+    path input_tsv
+
+    output:
+    path "*_catches.fasta"
+
+    script:
+    """
+    sequence_fetcher.py -t ${input_tsv} -f ${input_seq} -o ${input_seq}_catches.fasta
+    """
+}
 workflow {
     Channel
         .fromPath(params.seqs, checkIfExists: true) //not working atm
@@ -62,5 +80,6 @@ workflow {
     
 
     ips_ch = IPS(sep_seqs_ch).view()
-    fish_ch= FISHERMAN(ips_ch).view()
+    fish_ch = FISHERMAN(ips_ch).view()
+    catches_ch = FETCHER(fish_ch).view()
 }
