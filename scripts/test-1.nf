@@ -1,4 +1,4 @@
-params.seqs = "/home/nikoverg/Documents/bioinformatics/projects/Thesis/results/interproscan_results/uniparc_active_p196.1.fasta.tsv"
+params.seqs = ""
 params.ips_dir = "~/interproscan-5.63-95.0"
 params.outdir = "$projectDir/results/"
 
@@ -59,8 +59,8 @@ workflow {
         .flatten()
         .splitFasta(by : 150000 , file: true)
         .set {sep_seqs_ch}
-    FISHERMAN(sep_seqs_ch).view()
+    
 
-    //ips_ch = IPS(sep_seqs_ch).view()
-    //fish_ch= FISHERMAN(ips_ch).view()
+    ips_ch = IPS(sep_seqs_ch).view()
+    fish_ch= FISHERMAN(ips_ch).view()
 }
