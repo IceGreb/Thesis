@@ -49,7 +49,7 @@ process FISHERMAN {
 
     script:
     """
-    fisherman.py -i ${ips_tsv} -o ${params.outdir}/fisherman
+    fisherman.py -i ${ips_tsv} -o ${params.outdir}fisherman
     """
 }
 
@@ -64,11 +64,28 @@ process FETCHER {
     path input_tsv
 
     output:
-    path "*_catches.fasta"
+    path "*_Seqcatches.fasta"
 
     script:
     """
-    sequence_fetcher.py -t ${input_tsv} -f ${input_seq} -o ${input_seq}_catches.fasta
+    sequence_fetcher.py -t ${input_tsv} -f ${input_seq} -o ${input_seq}
+    """
+}
+
+process MMSQ  {
+    publishDir "${params.outdir}/mmseq"
+    debug true
+
+    
+    input  :
+    file input_fasta
+
+    output :
+    path seq_DB
+
+    script :
+    """
+    mmseqs createdb ${input_fasta}  -o ${seq_DB}
     """
 }
 workflow {
@@ -80,6 +97,7 @@ workflow {
     
 
     ips_ch = IPS(sep_seqs_ch).view()
-    fish_ch = FISHERMAN(ips_ch).view()
-    catches_ch = FETCHER(fish_ch).view()
+    fish_ch = FISHERMAN(ips_ch).view().flatten()
+    catches_ch = FETCHER(sep_seqs_ch,fish_ch).view()
+    mmseqs_ch = MMSQ(catches_ch)
 }
