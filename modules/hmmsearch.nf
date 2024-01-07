@@ -1,4 +1,7 @@
 process HMMSEARCH_LOOP {
+/*
+ * Requires hmmsearch - TO DO: run with docker/container 
+ */
     publishDir "${params.outdir}", mode: "copy"
 
     debug true //process stdout shows in terminal
