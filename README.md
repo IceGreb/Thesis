@@ -1,2 +1,2 @@
-# Thesis
-Pipeline for metagenomics data analysis and handling
+# MetaSA-scan
+Nextflow Pipeline for metagenomics data analysis and enzyme discovery using Interproscan and hmmer
