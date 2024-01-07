@@ -1,5 +1,5 @@
 
-/* Metagenomics Sequence Analysis Pipeling written in nextflow
+/* Metagenomics Sequence Analysis Pipeline written in nextflow
  *  utilizing InterproScan toolkit
  * In its current state it searches for 4 major domain categories
  *  against a major db (like UniParc) with output results in:
