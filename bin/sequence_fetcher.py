@@ -1,4 +1,4 @@
-#!/home/nvergoulidis/miniconda3/bin/python
+#!/bin/python
 from Bio import SeqIO
 import argparse
 from numpy import rec
