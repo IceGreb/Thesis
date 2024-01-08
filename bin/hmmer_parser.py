@@ -1,4 +1,4 @@
-#!/home/nvergoulidis/miniconda3/bin/python
+#!/bin/python
 import csv
 import os
 import argparse
