@@ -2,8 +2,8 @@
 
 nextflow.enable.dsl = 2
 
-include { MetaSA_IPS_Scan   } from '/home/nvergoulidis/MetaSA-scan/workflows/MetaSA_IPS_Scan'
-include { MetaSA_hmmer_Scan }from '../MetaSa-scan/workflows/MetaSA_hmmer_Scan'
+include { MetaSA_IPS_Scan   } from '../MetaSA-scan/workflows/MetaSA_IPS_Scan'
+include { MetaSA_hmmer_Scan } from '../MetaSa-scan/workflows/MetaSA_hmmer_Scan'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
